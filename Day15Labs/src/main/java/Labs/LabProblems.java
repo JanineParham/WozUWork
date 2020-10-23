@@ -30,12 +30,14 @@ public class LabProblems {
     }
 
     public static int[] getFibonacciArray(int[] ints){
-        for(int i = 1; i < ints.length; i++){
-            if(i ==0 || i == 1){
-                ints[i] = i;
-            }
-            else {
-                ints[i] = ints[i - 1] + ints[i - 2];
+        if(ints.length > 8 && ints.length < 50){
+            for(int i = 1; i < ints.length; i++){
+                if(i ==0 || i == 1){
+                    ints[i] = i;
+                }
+                else {
+                    ints[i] = ints[i - 1] + ints[i - 2];
+                }
             }
         }
         return ints;

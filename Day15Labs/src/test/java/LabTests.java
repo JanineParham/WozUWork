@@ -34,9 +34,22 @@ public class LabTests {
         int[] ints = new int[8];
         int[] expected = {0, 1, 1, 2, 3, 5, 8, 13};
         int[] actual = labProblems.getFibonacciArray(ints);
-        for(int val : actual){
-            System.out.println(val);
-        }
         assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    void lowerLimitsOfFibonacciGenerator(){
+        //Cannot be less than 8
+        int[] ints = new int[7];
+        int[] actual = labProblems.getFibonacciArray(ints);
+        assertArrayEquals(ints, actual);
+    }
+
+    @Test
+    void higherLimitsOgFibonacciGenerator(){
+        //Cannot be more than 50
+        int[] ints = new int[51];
+        int[] actual = labProblems.getFibonacciArray(ints);
+        assertArrayEquals(ints, actual);
     }
 }
